@@ -10,6 +10,25 @@
 		//LIFFの初期化
 		// Line DevelopersのLIFF設定画面にあるID
 		liff.init({liffId:"あなたのLIFF ID"}).then(()=>{
+			liff.getProfile().then(profile=>{alert("こんにちは、" + profile.displayName + "さん！");});
+			
+			// ログイン済みかチェック
+			//if(liff.isLoggedIn()){
+				// ログインしていればユーザのプロフィール取得
+			//	liff.getProfile().then(profile=>{alert("こんにちは、" + profile.displayName + "さん！");});
+			//} else {
+				// 未ログインならログインさせる
+			//	liff.login();
+			//}
+		});
+	</script>
+
+	<!--
+	<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+	<script>
+		//LIFFの初期化
+		// Line DevelopersのLIFF設定画面にあるID
+		liff.init({liffId:"あなたのLIFF ID"}).then(()=>{
 			// ログイン済みかチェック
 			if(liff.isLoggedIn()){
 				// ログインしていればユーザのプロフィール取得
@@ -20,7 +39,25 @@
 			}
 		});
 	</script>
+	-->
 
+	<!--
+	<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+	<script>
+		//LIFFの初期化
+		// Line DevelopersのLIFF設定画面にあるID
+		liff.init({liffId:"あなたのLIFF ID"}).then(()=>{
+			// ログイン済みかチェック
+			if(liff.isLoggedIn()){
+				// ログインしていればユーザのプロフィール取得
+				liff.getProfile().then(profile=>{alert("こんにちは、" + profile.displayName + "さん！");});
+			} else {
+				// 未ログインならログインさせる
+				liff.login();
+			}
+		});
+	</script>
+	-->
 	<!--
 	<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 	<script src="https://static.line-scdn.net/liff/edge/versions/2.22.3/sdk.js"></script>
