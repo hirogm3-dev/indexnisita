@@ -5,14 +5,19 @@
 	<title>私のミニアプリ</title>
 </head>
 <body>
-	import liff from "@line/liff";
 	<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 	"1"
 	<script>
 		//LIFFの初期化
 		// Line DevelopersのLIFF設定画面にあるID
-		liff.init({liffId:"2010446717-4NcJNzWv"}).then(()=>{
-			alert("こんにちは、" + profile.displayName + "さん！");
+		liff.init({ liffId: "2010446717-4NcJNzWv" }).then(() => {
+			if (liff.isLoggedIn()) {
+				liff.getProfile().then(p => alert(p.displayName)).catch(e => console.log(e));
+			} else {
+				liff.login();
+			}
+		}).catch((err) => {
+			alert("エラーが発生しました：" + err.message);
 		});
 			// ログイン済みかチェック
 			//if(liff.isLoggedIn()){
