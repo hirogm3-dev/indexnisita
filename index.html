@@ -12,68 +12,15 @@
 		// Line DevelopersのLIFF設定画面にあるID
 		liff.init({ liffId: "2010446717-4NcJNzWv" }).then(() => {
 			if (liff.isLoggedIn()) {
-				liff.getProfile().then(p => alert(p.displayName)).catch(e => console.log(e));
+				liff.getProfile().then(p => alert("こんにちは、" + p.displayName + "さん！")).catch(e => console.log(e));
 			} else {
 				liff.login();
 			}
 		}).catch((err) => {
 			alert("エラーが発生しました：" + err.message);
 		});
-			// ログイン済みかチェック
-			//if(liff.isLoggedIn()){
-				// ログインしていればユーザのプロフィール取得
-			//	liff.getProfile().then(profile=>{alert("こんにちは、" + profile.displayName + "さん！");});
-			//} else {
-				// 未ログインならログインさせる
-			//	liff.login();
-			//}
 	</script>
 	"2"
-	<!--
-	<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-	<script>
-		//LIFFの初期化
-		// Line DevelopersのLIFF設定画面にあるID
-		liff.init({liffId:"あなたのLIFF ID"}).then(()=>{
-			// ログイン済みかチェック
-			if(liff.isLoggedIn()){
-				// ログインしていればユーザのプロフィール取得
-				liff.getProfile().then(profile=>{alert("こんにちは、" + profile.displayName + "さん！");});
-			} else {
-				// 未ログインならログインさせる
-				liff.login();
-			}
-		});
-	</script>
-	-->
 
-	<!--
-	<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-	<script>
-		//LIFFの初期化
-		// Line DevelopersのLIFF設定画面にあるID
-		liff.init({liffId:"あなたのLIFF ID"}).then(()=>{
-			// ログイン済みかチェック
-			if(liff.isLoggedIn()){
-				// ログインしていればユーザのプロフィール取得
-				liff.getProfile().then(profile=>{alert("こんにちは、" + profile.displayName + "さん！");});
-			} else {
-				// 未ログインならログインさせる
-				liff.login();
-			}
-		});
-	</script>
-	-->
-	<!--
-	<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-	<script src="https://static.line-scdn.net/liff/edge/versions/2.22.3/sdk.js"></script>
-	<script src="src/script.js"></script>
-	-->
-	
-	<!--
-	<h1>こんにちは！</h1>
-	<p>これが初めてのLINEミニアプリの画面です。</p>
-	<button onclick="alert('ボタンが押されました！')">押してみてね</button>
-	-->
 </body>
 </html>
