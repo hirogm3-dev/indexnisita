@@ -11,14 +11,14 @@
 		//LIFFの初期化
 		liff.init({liffId: "あなたのLIFF ID" // Line DevelopersのLIFF設定画面にあるID
 		}).then(() => {
-			// ログイン済みかチェック
+			<!-- ログイン済みかチェック -->
 			if(liff.isLoggedIn()){
-				// ログインしていればユーザのプロフィール取得
+				<!-- ログインしていればユーザのプロフィール取得 -->
 				liff.getProfile().then(profile => {
 					alert("こんにちは、" + profile.displayName + "さん！");
 				});
 			} else {
-				// 未ログインならログインささえる
+				<!-- 未ログインならログインさせる -->
 				liff.login();
 			}
 		});
