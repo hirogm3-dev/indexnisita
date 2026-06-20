@@ -23,6 +23,23 @@
 	<button id="scanButton">スタンプをもらう（QR読み取り）</button>
 	
 	<script>
+		document.getElementById('scanButton').addEventListener('click', async () => {
+			//ボタンが押されたらカメラを起動
+			//async function scanQRCode() {
+				if(liff.scanCode) {
+					const result = await liff.scanCode();
+					alert("読み取った内容：" + result.value);
+					//ここで result.value (QRコードの中身)をサーバに送る
+				} else {
+					alert("この環境ではQR読み取りができません");
+				}
+			//}
+		});
+		
+	</script>
+
+	<!--
+	<script>
 		//ボタンが押されたらカメラを起動
 		async function scanQRCode() {
 			if(liff.scanCode) {
@@ -33,7 +50,8 @@
 				alert("この環境ではQR読み取りができません");
 			}
 		}
-		
 	</script>
+	-->
+
 </body>
 </html>
