@@ -18,6 +18,18 @@
 		}).catch((err) => {
 			alert("エラーが発生しました：" + err.message);
 		});
+
+		//ボタンが押されたらカメラを起動
+		async function scanQRCode() {
+			if(liff.scanCode) {
+				const result = await liff.scanCode();
+				alert("読み取った内容：" + result.value);
+				//ここで result.value (QRコードの中身)をサーバに送る
+			} else {
+				alert("この環境ではQR読み取りができません");
+			}
+		}
+		
 	</script>
 </body>
 </html>
