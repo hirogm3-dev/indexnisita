@@ -20,6 +20,19 @@
 		});
 	</script>
 
+	<script>
+		try {
+			const result = await liff.scanCode();
+		} catch (err) {
+			// ここでエラーの内容をコンソールに出力
+			console.log("エラーの詳細：", err );
+			// エラーオブジェクトのプロパティを確認
+			console.log("エラー名：", err.name);
+			console.log("エラーメッセージ：", err.message);
+		}
+	</script>
+	
+
 	<button id="scanButton">スタンプをもらう（QR読み取り）</button>
 	
 	<script>
