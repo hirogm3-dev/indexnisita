@@ -25,10 +25,8 @@
 			const result = await liff.scanCode();
 		} catch (err) {
 			// ここでエラーの内容をコンソールに出力
-			alert(console.log("エラーの詳細：", err ));
-			// エラーオブジェクトのプロパティを確認
-			alert(console.log("エラー名：", err.name));
-			alert(console.log("エラーメッセージ：", err.message));
+			alert("エラーのコード：" + lifferror.code );
+			alert("エラーメッセージ：" + lifferror.message));
 		}
 	</script>
 	
