@@ -26,8 +26,8 @@
 		document.getElementById('scanButton').addEventListener('click', async () => {
 			//ボタンが押されたらカメラを起動
 			//async function scanQRCode() {
-				if(liff.scanCode()) {
-					const result = await liff.scanCode();
+				if(liff.scanCodeV2()) {
+					const result = await liff.scanCodeV2();
 					alert("読み取った内容：" + result.value);
 					//ここで result.value (QRコードの中身)をサーバに送る
 				} else {
