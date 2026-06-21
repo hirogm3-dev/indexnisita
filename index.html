@@ -20,17 +20,6 @@
 		});
 	</script>
 
-	<script>
-		try {
-			const result = await liff.scanCode();
-		} catch (err) {
-			// ここでエラーの内容をコンソールに出力
-			alert("エラーのコード：" + lifferror.code );
-			alert("エラーメッセージ：" + lifferror.message));
-		}
-	</script>
-	
-
 	<button id="scanButton">スタンプをもらう（QR読み取り）</button>
 	
 	<script>
@@ -43,6 +32,7 @@
 					//ここで result.value (QRコードの中身)をサーバに送る
 				} else {
 					alert("この環境ではQR読み取りができません");
+					alert("エラーコード：" + liffError.code);
 				}
 			//}
 		});
