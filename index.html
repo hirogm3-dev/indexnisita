@@ -42,23 +42,26 @@
 				}
 			//}
 		});
+
+		import { createClient } from '@supabase/supabase-js';
+
+		// vercelに設定された環境変数を読み込む
+		const supabase = createClient(
+			process.env.NEXT_PUBLIC_SUPABASE_URL,
+			process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+		)
+		async function testConnection() {
+			const { data, error } = await supabase.from('aaa').select('*').limit(1);
+			if (error) {
+				alert("接続エラー："  + error.message);
+			} else {
+				alert("接続成功！：" ＋data )
+			}
+			
+		}
 		
 	</script>
 
-	<!--
-	<script>
-		//ボタンが押されたらカメラを起動
-		async function scanQRCode() {
-			if(liff.scanCode) {
-				const result = await liff.scanCode();
-				alert("読み取った内容：" + result.value);
-				//ここで result.value (QRコードの中身)をサーバに送る
-			} else {
-				alert("この環境ではQR読み取りができません");
-			}
-		}
-	</script>
-	-->
 
 </body>
 </html>
