@@ -11,7 +11,7 @@
 		// Line DevelopersのLIFF設定画面にあるID
 		liff.init({ liffId: "2010446717-4NcJNzWv" }).then(() => {
 			if (liff.isLoggedIn()) {
-				liff.getProfile().then(p => alert("こんにちは、" + p.displayName + "さん！/nLINE ID :" + p.userId)).catch(e => console.log(e));
+				liff.getProfile().then(p => alert("こんにちは、" + p.displayName + "さん！\nLINE ID :" + p.userId)).catch(e => console.log(e));
 			} else {
 				liff.login();
 			}
